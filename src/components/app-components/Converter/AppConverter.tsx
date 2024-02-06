@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 
 import CurrencyBlock from "../Converter/CurrencyBlock.tsx";
 
@@ -7,24 +8,23 @@ import './Converter.style.css';
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'BYN'];
 
 function AppConverter() {
+    const [date, setDate] = useState<any>();
     const [currencyFrom, setCurrencyFrom] = useState("RUB");
     const [currencyTo, setCurrencyTo] = useState("USD");
     const [valueFrom, setValueFrom] = useState(0);
     const [valueTo, setValueTo] = useState(0);
 
-
     const [arrayCurrency, setArrayCurrency] = useState({});
-
+    const currencyConvert: any = []
 
     let keysCurrency = Object.keys(arrayCurrency);
-    const currencyConvert: any = []
     defaultCurrencies.forEach(item => {
         if (keysCurrency.includes(item)) {
             currencyConvert.push(arrayCurrency[item])
         }
     })
 
-    const onChangeFromPrice = (value) => {
+    const onChangeFromPrice = (value: number) => {
         let result: number;
         if (currencyTo === "RUB" && currencyFrom === "RUB") result = value;
         else if (currencyFrom === "RUB") {
@@ -41,7 +41,7 @@ function AppConverter() {
         setValueFrom(value);
     }
 
-    const onChangeToPrice = (value) => {
+    const onChangeToPrice = (value: number) => {
         let result: number;
         if (currencyFrom === "RUB") {
             result = value * getValue(currencyTo);
@@ -61,12 +61,18 @@ function AppConverter() {
         let objectCur = currencyConvert.filter(item => item.CharCode === currency);
         return objectCur[0]?.Value
     }
-
+    const getDate = (date: string) => {
+        const datePublish = new Date(date);
+        return datePublish.toLocaleString()
+    }
 
     useEffect(() => {
         fetch("https://www.cbr-xml-daily.ru/daily_json.js")
             .then(data => data.json())
-            .then(item => setArrayCurrency(item.Valute))
+            .then(item => {
+                setDate(getDate(item.Date))
+                setArrayCurrency(item.Valute)
+            })
     }, []);
 
     useEffect(() => {
@@ -76,9 +82,10 @@ function AppConverter() {
     useEffect(() => {
         onChangeToPrice(valueTo);
     }, [currencyTo]);
+
     return (
         <div className="app-converter">
-
+            <h4 style={{ margin: "12px" }}>Данные на {date}</h4>
             <CurrencyBlock
                 value={valueFrom}
                 currency={currencyFrom}

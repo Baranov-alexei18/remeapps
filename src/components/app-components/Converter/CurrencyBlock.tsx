@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
+interface Currency {
+    value: number;
+    currency: string;
+    array: string[];
+    onChangeCurrency: React.Dispatch<React.SetStateAction<string>>;
+    onChangeValue: (value: number) => void;
+}
 
-
-const CurrencyBlock = (props) => {
+const CurrencyBlock: React.FC<Currency> = (props) => {
 
     return (
         <div className="block">
@@ -23,7 +29,7 @@ const CurrencyBlock = (props) => {
                 </li>
             </ul>
             <input
-                onChange={(e) => props.onChangeValue(e.target.value)}
+                onChange={(e) => props.onChangeValue(Number(e.target.value))}
                 value={props.value || ''}
                 type="number"
                 placeholder={"0"}
