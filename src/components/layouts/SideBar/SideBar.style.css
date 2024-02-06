@@ -1,0 +1,39 @@
+
+.app-navbar{
+    min-height: 100vh;
+    width: 300px;
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    background-color: rgb(204, 221, 179);
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-radius: 20px;
+    margin-right: 6px;
+  }
+  .app-navbar ul{
+    text-decoration: none;
+    padding: 0 10px;
+    line-height: 2.5;
+  }
+  
+  .app-navbar ul a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background-color: #c7d5b3;
+    border: 1px solid #c7d5b3;
+
+    color: black;
+    list-style-type: none;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  .app-navbar ul a:hover{
+    background-color: #becbab !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .app-navbar ul a:active, a:focus{
+    color: white;
+    background-color: #a8dd59;
+  }

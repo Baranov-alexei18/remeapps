@@ -1,0 +1,59 @@
+.app-converter {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 700px;
+    gap: 30px;
+    margin: 0 auto;
+    background-color: #fff;
+    color: black;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+  }
+  
+  .block {
+    input {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      font-size: 3rem;
+      font-weight: bold;
+      outline: none;
+      margin-top: 20px;
+      border-radius: 5px;
+      width: 100%;
+    }
+  }
+  
+  .currencies {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  
+    li {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      justify-content: center;
+      flex: 1;
+  
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+  
+      &:active {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+  
+      &.active {
+        background-color: #6FC171;
+        color: #fff;
+      }
+
+    }
+  }

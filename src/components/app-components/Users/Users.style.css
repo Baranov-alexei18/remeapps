@@ -1,0 +1,76 @@
+.app-users{
+    display: flex;
+    gap: 12px;
+    padding: 8px;
+}
+.list_wrapper{
+    flex-basis: 100%;
+    font-size: calc(10px + 2vmin);
+}
+.user_list {
+    display: flex;
+    background-color: rgb(111, 193, 113);
+    font-size: calc(6px + 1vmin);
+
+    border-radius: 20px;
+    margin-bottom: 16px;
+    padding: 10px;
+}
+.user_list .user_content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 12px;
+    width: 80%;
+}
+.user_list .user_content p, .user_list .user_content h1{
+    margin: 0;
+}
+.user_list .user_action {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 2px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 8px;
+    border-radius: 8px;   
+}
+.user_list .user_action  button{
+    height: 30px;
+    min-width: 100%;
+    width: max-content;
+    cursor: pointer;
+    border-radius: 8px;   
+}
+#delete_btn{
+    background-color: rgb(227, 57, 57);
+}
+#edit_btn{
+    background-color: rgb(162, 210, 103);
+}
+.form_wrapper{
+    width: 30%;
+    min-height: max-content;
+    height: 100%;
+    max-height: max-content;
+    padding: 10px;
+    background-color: rgb(201, 140, 59);
+    border-radius: 20px;
+}
+
+.form_wrapper input,.form_wrapper button {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 4px 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: transform 500ms ease;
+}
+.form_wrapper input:focus-visible,button:hover {
+    transform: scale(1.03);
+}

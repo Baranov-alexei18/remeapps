@@ -1,0 +1,32 @@
+header {
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    font-size: calc(10px + 2vmin);
+    background-color: rgb(214, 223, 180);
+    color: white;
+    border-radius: 20px;
+  }
+  .header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .header-wrapper h4{
+    margin: 0;
+  }
+  .socialIcons_wrapper a, .socialIcons_wrapper a svg{
+    margin-left: 8px;
+    color: white;
+    transition: 1s;
+  }
+  .socialIcons_wrapper :visited{
+    background-color: rgb(214, 223, 180);
+  }
+  .socialIcons_wrapper a svg:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
