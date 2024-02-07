@@ -3,6 +3,7 @@ import GameQuiz from "./GameQuiz.tsx"
 import ResultQuiz from "./ResultQuiz.tsx"
 
 import './Quiz.style.css';
+import ErrorBoundary from "../../shared/Errors/ErrorBoundary.js";
 
 
 export interface InterfaceQuestions {
@@ -52,14 +53,13 @@ const AppQuiz: React.FC<{}> = () => {
     }
     return (
         <div className="app-quiz">
+
             {endQuiz ?
                 <ResultQuiz answer={variantCount} sizeQuiz={questions.length} onAgain={gameAgain} /> :
                 <GameQuiz step={stepQuiz} question={task} sizeQuiz={questions.length} onNextQuestion={nextQuestion} />
             }
-
         </div>
     );
 }
 
-// function endQuiz
 export default AppQuiz;

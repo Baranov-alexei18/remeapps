@@ -2,6 +2,7 @@
 import React from "react";
 
 import './Quiz.style.css';
+import ErrorButton from "../../shared/Errors/ErrorButton";
 
 interface Result {
     answer: number;
@@ -16,6 +17,8 @@ const ResultQuiz: React.FC<Result> = (props: Result) => {
             <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" />
             <h2>Вы отгадали {props.answer} ответа из {props.sizeQuiz}</h2>
             <button className="result-button" onClick={props.onAgain}>Попробовать снова</button>
+            <hr />
+            <ErrorButton />
         </div>
     );
 }
