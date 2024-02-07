@@ -2,15 +2,9 @@ import React, { createContext } from 'react';
 
 import { RouterApp } from "./store/Router.js"
 
-
-import Home from './view/Home.tsx';
-import Users from './view/Users.tsx';
-import Quiz from './view/Quiz.tsx';
-
 import {
   Routes,
   Route,
-  useRouteError,
 } from "react-router-dom";
 
 
@@ -18,7 +12,7 @@ import './App.css';
 
 import Header from './components/layouts/Headers/Header.tsx';
 import Navbar from './components/layouts/SideBar/Navbar.tsx';
-import ErrorBoundary from './view/ErrorBoundary.tsx';
+import PageNotFund from './view/PageNotFund.tsx';
 
 
 
@@ -34,7 +28,7 @@ export default function App(): React.JSX.Element {
             {RouterApp.map((item, idx) =>
               <Route key={idx} path={item.path} element={item.element}></Route>
             )}
-            <Route path="*" element={<ErrorBoundary />}></Route>
+            <Route path="*" element={<PageNotFund />}></Route>
           </Routes>
         </main>
       </div>
