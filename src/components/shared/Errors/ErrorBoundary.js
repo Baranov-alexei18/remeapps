@@ -9,7 +9,6 @@ class ErrorBoundary extends React.Component{
             error: null,
             errorInfo: null,
         }
-        console.log(this.error, this.errorInfo);
     }
 
     componentDidCatch(error ,errorInfo) {
