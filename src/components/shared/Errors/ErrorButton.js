@@ -6,7 +6,7 @@ const ErrorButton = () => {
 
     if (error) throw new Error('From ErrorButton');
     
-    return <button onClick={()=>setError(true)}>Вызови ошибку для проверки предохранителя</button>;
+    return <button onClick={() => setError(true)} style={{ backgroundColor: 'red', height: '40px', borderRadius: '16px'}}>Вызови ошибку для проверки предохранителя</button>;
     
 }
 export default ErrorButton

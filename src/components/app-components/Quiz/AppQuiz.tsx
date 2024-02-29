@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import GameQuiz from "./GameQuiz.tsx"
 import ResultQuiz from "./ResultQuiz.tsx"
 
@@ -33,6 +33,8 @@ const questions = [
     },
 ];
 
+export const ThemeContext = createContext('')
+
 const AppQuiz: React.FC<{}> = () => {
     const [stepQuiz, setStepQuiz] = useState<number>(0);
     const [variantCount, setVariant] = useState<number>(0);
@@ -51,13 +53,16 @@ const AppQuiz: React.FC<{}> = () => {
         setVariant(0);
         setEndQuiz(false);
     }
+
     return (
         <div className="app-quiz">
+            <ThemeContext.Provider value="Progress">
+                {endQuiz ?
+                    <ResultQuiz answer={variantCount} sizeQuiz={questions.length} onAgain={gameAgain} /> :
+                    <GameQuiz step={stepQuiz} question={task} sizeQuiz={questions.length} onNextQuestion={nextQuestion} />
+                }
 
-            {endQuiz ?
-                <ResultQuiz answer={variantCount} sizeQuiz={questions.length} onAgain={gameAgain} /> :
-                <GameQuiz step={stepQuiz} question={task} sizeQuiz={questions.length} onNextQuestion={nextQuestion} />
-            }
+            </ThemeContext.Provider>
         </div>
     );
 }

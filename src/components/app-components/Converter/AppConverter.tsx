@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 import CurrencyBlock from "../Converter/CurrencyBlock.tsx";
+import ConverterTemp from "./ConverterTemp.tsx";
 
 import './Converter.style.css';
 
@@ -98,6 +99,8 @@ function AppConverter() {
                 array={defaultCurrencies}
                 onChangeCurrency={setCurrencyTo}
                 onChangeValue={onChangeToPrice} />
+
+            <ConverterTemp />
         </div>
     );
 }

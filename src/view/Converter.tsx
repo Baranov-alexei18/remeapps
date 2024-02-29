@@ -5,7 +5,7 @@ import { LoadingApp } from '../components/shared/Load/Loading.js';
 
 const Converters: React.FC = () => {
 
-    const ConverterLoading = LoadingApp(Converter);
+    const ConverterLoading = LoadingApp('hello', Converter);
     return (
         <div style={{ padding: "20px" }}>
             <ConverterLoading />
