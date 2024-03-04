@@ -17,18 +17,17 @@ interface Form {
 
 class FormNewUser extends React.Component<IFormUser, Readonly<Form>> {
     userAdd: InterfaceUser = {};
-    valideForm: boolean = true;
     form: any;
 
     constructor(props: IFormUser | Readonly<IFormUser>) {
         super(props);
 
         this.state = {
-            email: "",
-            name: "",
-            username: "",
-            phone: "",
-            website: "",
+            email: this.props.user?.email,
+            name: this.props.user?.name,
+            username: this.props.user?.username,
+            phone: this.props.user?.phone,
+            website: this.props.user?.website,
         };
 
     }
@@ -37,11 +36,6 @@ class FormNewUser extends React.Component<IFormUser, Readonly<Form>> {
         const name = e.target.name;
         const value = e.target.value;
         this.setState({ [name]: value });
-
-        if (this.state.email && this.state.name && this.state.username &&
-            this.state.phone && this.state.website) {
-            this.valideForm = false;
-        }
     }
 
     render() {
@@ -52,28 +46,27 @@ class FormNewUser extends React.Component<IFormUser, Readonly<Form>> {
                 <input placeholder="username" name="username" value={this.state.username} onChange={(e) => this.handleUserInput(e)} required></input>
                 <input placeholder="phone" name="phone" value={this.state.phone} onChange={(e) => this.handleUserInput(e)} required></input>
                 <input placeholder="website" name="website" value={this.state.website} onChange={(e) => this.handleUserInput(e)} required></input>
-                <button type="button" disabled={this.valideForm} onClick={() => {
-                    this.userAdd = {
-                        email: this.state.email,
-                        name: this.state.name,
-                        username: this.state.username,
-                        phone: this.state.phone,
-                        website: this.state.website,
-                    }
-                    if (this.props.user) this.userAdd.id = this.props.user.id
-                    this.props.onAdd(this.userAdd);
-                    this.form.reset();
-
-                    this.setState({ email: "" });
-                    this.setState({ name: "" });
-                    this.setState({ username: "" });
-                    this.setState({ phone: "" });
-                    this.setState({ website: "" });
-
-                    this.valideForm = true;
+                <button type="button" disabled={!this.state.email || !this.state.name || !this.state.username ||
+                    !this.state.phone || !this.state.website} onClick={() => {
+                        this.userAdd = {
+                            email: this.state.email,
+                            name: this.state.name,
+                            username: this.state.username,
+                            phone: this.state.phone,
+                            website: this.state.website,
+                        }
+                        if (this.props.user) this.userAdd.id = this.props.user.id
+                        this.props.onAdd(this.userAdd);
+                        this.form.reset();
+                        this.setState({ email: "" });
+                        this.setState({ name: "" });
+                        this.setState({ username: "" });
+                        this.setState({ phone: "" });
+                        this.setState({ website: "" });
 
 
-                }}>Добавить</button>
+
+                    }}>Добавить</button>
             </form>
         )
     }
