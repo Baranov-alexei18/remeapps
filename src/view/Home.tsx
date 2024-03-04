@@ -1,6 +1,4 @@
-import React, { SetStateAction, useEffect, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
-import InputDefault from '../components/shared/Input';
+import React from 'react';
 
 const Home: React.FC = () => {
 
