@@ -3,8 +3,7 @@ import Users from '../view/Users.tsx';
 import Quiz from '../view/Quiz.tsx';
 import Converter from '../view/Converter.tsx';
 import Chat from '../view/Chat.tsx';
-
-import ChatLogin from '../components/app-components/Chat/ChatLogin.tsx'
+import Сalculator from '../view/Сalculator.tsx';
 
 export const RouterApp = [
     {
@@ -27,6 +26,11 @@ export const RouterApp = [
         path: '/converter',
         title: "Конвертер",
         element: <Converter />
+    },
+    {
+        path: '/calculator',
+        title: "Калькулятор",
+        element: <Сalculator />
     },
     {
         path: '/chat',

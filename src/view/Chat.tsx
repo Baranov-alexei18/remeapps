@@ -2,7 +2,7 @@ import React from 'react';
 import AppChat from '../components/app-components/Chat/AppChat.tsx';
 
 
-const Users: React.FC = () => {
+const Chat: React.FC = () => {
 
     return (
         <div>
@@ -11,4 +11,4 @@ const Users: React.FC = () => {
     );
 }
 
-export default Users;
+export default Chat;
