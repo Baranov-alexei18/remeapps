@@ -1,7 +1,6 @@
 
 .app-navbar{
     min-height: 97vh;
-    width: 300px;
     z-index: 1;
     top: 0; 
     left: 0;
@@ -10,13 +9,35 @@
     padding-top: 20px;
     border-radius: 20px;
     margin-right: 6px;
+    transition: width 0.5s ease
+  }
+  .toggle-button-navbar{
+    display: flex;
+    margin-left: auto;
+    background-color: inherit ;
+    border: none;
+    border-radius: 50%;
+    padding: 12px; 
+
+  }
+
+  .toggle-button-navbar :hover{
+    background-color: rgba(212, 212, 212, 0.7) ;
+    border: none;
+    border-radius: 50%;
   }
   .app-navbar ul{
     text-decoration: none;
+    /* list-style-image: url(../../../../src/assets/svg/ol.svg); */
+    list-style: none;
     padding: 0 10px;
     line-height: 2.5;
   }
-  
+  .app-navbar .list{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
   .app-navbar ul a{
     display: flex;
     flex-direction: column;
@@ -36,4 +57,13 @@
   .app-navbar ul a:active, a:focus{
     color: white;
     background-color: #a8dd59;
+  }
+  .title-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-grow: 10;
+    gap: 12px;
+    padding-left: 16px;
+    overflow-x:hidden;
   }
