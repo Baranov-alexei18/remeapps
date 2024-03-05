@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 
-import { RouterApp } from "./store/Router.js"
+import { RouterApp } from "./store/Router"
 
 import {
   Routes,

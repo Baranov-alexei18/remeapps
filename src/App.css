@@ -22,6 +22,7 @@ main {
   color: white;
   border-radius: 20px;
   margin-top: 4px;
+  overflow: hidden;
 }
 .model-open{
   overflow: hidden;
