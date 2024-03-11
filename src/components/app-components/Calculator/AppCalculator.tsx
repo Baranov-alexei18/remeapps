@@ -23,6 +23,7 @@ const AppCalculator = () => {
     const [operate, setOperate] = useState<operation>();
     const [result, setResult] = useState<Number>();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (numberOne && !result) {
             setNumberTwo(input as Number)
@@ -64,6 +65,7 @@ const AppCalculator = () => {
         if (numberOne && numberTwo) {
             calculateResult()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [numberOne])
 
     useEffect(() => {
