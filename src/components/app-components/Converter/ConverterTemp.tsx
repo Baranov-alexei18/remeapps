@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import ItemConverterTemp from "../Converter/ItemConverterTemp.tsx";
 

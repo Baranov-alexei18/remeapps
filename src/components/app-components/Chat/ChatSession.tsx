@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, Grid, Button, Container, TextField, Avatar } from '@mui/material';
-import ChatLogin from "./ChatLogin.tsx";
+import { Grid, Button, Container, TextField, Avatar } from '@mui/material';
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useCollectionData } from "react-firebase-hooks/firestore"

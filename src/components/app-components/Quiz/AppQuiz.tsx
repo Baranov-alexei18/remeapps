@@ -3,7 +3,6 @@ import GameQuiz from "./GameQuiz.tsx"
 import ResultQuiz from "./ResultQuiz.tsx"
 
 import './Quiz.style.css';
-import ErrorBoundary from "../../shared/Errors/ErrorBoundary.js";
 
 
 export interface InterfaceQuestions {

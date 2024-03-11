@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import './HomeView.css';
 
