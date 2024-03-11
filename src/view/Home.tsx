@@ -7,6 +7,7 @@ const Home: React.FC = () => {
     return (
         <>
             <h1>Welcome page</h1>
+            <h3>Created by Alexei Baranov</h3>
             <HomeView />
         </>
 
