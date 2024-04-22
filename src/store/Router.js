@@ -4,9 +4,10 @@ import Quiz from '../view/Quiz.tsx';
 import Converter from '../view/Converter.tsx';
 import Chat from '../view/Chat.tsx';
 import Сalculator from '../view/Сalculator.tsx';
+import Calendar from '../view/Calendar.tsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faUser, faFeather, faMoneyBillTransfer, faCalculator, faComments} from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faUser, faFeather, faMoneyBillTransfer, faCalculator, faComments, faCalendar} from '@fortawesome/free-solid-svg-icons';
 
 import imageUsers from '../assets/images/users.png'
 import imageQuiz from '../assets/images/quiz.png'
@@ -63,5 +64,13 @@ export const RouterApp = [
         icon: <FontAwesomeIcon icon={faComments} />,
         img: imageChat,
         element: <Chat />
+    },
+    {
+        id: 7,
+        path: '/calendar',
+        title: "Календарь",
+        icon: <FontAwesomeIcon icon={faCalendar} />,
+        img: imageChat,
+        element: <Calendar />
     },
 ]
