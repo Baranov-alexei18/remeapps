@@ -5,9 +5,11 @@ import Converter from '../view/Converter.tsx';
 import Chat from '../view/Chat.tsx';
 import Сalculator from '../view/Сalculator.tsx';
 import Calendar from '../view/Calendar.tsx';
+import Quill from '../view/Quill.tsx';
+import Editor from '../view/Editor.tsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faUser, faFeather, faMoneyBillTransfer, faCalculator, faComments, faCalendar} from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faUser, faFeather, faMoneyBillTransfer, faCalculator, faComments, faCalendar, faPencil} from '@fortawesome/free-solid-svg-icons';
 
 import imageUsers from '../assets/images/users.png'
 import imageQuiz from '../assets/images/quiz.png'
@@ -72,5 +74,21 @@ export const RouterApp = [
         icon: <FontAwesomeIcon icon={faCalendar} />,
         img: imageChat,
         element: <Calendar />
+    },
+    {
+        id: 8,
+        path: '/cms',
+        title: "CMS Editor.js",
+        icon: <FontAwesomeIcon icon={faPencil} />,
+        img: imageChat,
+        element: <Editor />
+    },
+    {
+        id: 9,
+        path: '/cms-quill',
+        title: "CMS Quill.js",
+        icon: <FontAwesomeIcon icon={faPencil} />,
+        img: imageChat,
+        element: <Quill />
     },
 ]
